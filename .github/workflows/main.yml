@@ -3,8 +3,7 @@ name: Deploy
 on:
   push:
     branches: ["master"]
-
-    workflow_dispatch:
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -25,29 +24,28 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Publish .NET
-        uses: dotnet publish Imc.csproj -c:Release -o docs --nologo
-
       - name: Setup .NET
-        uses: actions/configure-dotnet@v3      
+        uses: actions/setup-dotnet@v3      
         with:
           dotnet-version: '9.0.x'
 
       - name: Install dependencies
         run: dotnet workload install wasm-tools
 
+      - name: Publish .NET
+        run: dotnet publish Imc.csproj -c Release -o docs --nologo
+
       - name: Build
-        run: dotnet build -c Releaase --no-restore
+        run: dotnet build -c Release --no-restore
 
       - name: Setup pages
         uses: actions/configure-pages@v4
-        
+
       - name: Upload
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.docs/wwwroot'
-      
-      -name: Deploy
+          path: 'docs/wwwroot'
+
+      - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v4   
-      
+        uses: actions/deploy-pages@v4
