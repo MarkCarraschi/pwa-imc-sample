@@ -16,14 +16,4 @@
   <ItemGroup>
     <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />    
   </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Components\Dialog.razor.js" />
-    <RazorComponent Include="Components\Dialog.razor" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="wwwroot\Components\Dialog.razor.js" />
-    <RazorComponent Include="wwwroot\Components\Dialog.razor" />
-  </ItemGroup>
 </Project>
