@@ -22,4 +22,8 @@
     <RazorComponent Include="Components\Dialog.razor" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="wwwroot\Components\Dialog.razor.js" />
+    <RazorComponent Include="wwwroot\Components\Dialog.razor" />
+  </ItemGroup>
 </Project>
