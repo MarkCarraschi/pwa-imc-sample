@@ -18,8 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\Components\Dialog.razor.js" />
-    <RazorComponent Include="Pages\Components\Dialog.razor" />
+    <Content Include="Components\Dialog.razor.js" />
+    <RazorComponent Include="Components\Dialog.razor" />
   </ItemGroup>
 
 </Project>
